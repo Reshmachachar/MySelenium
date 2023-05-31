@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroupSuite">
+
+	<test name="test1"> <!-- Test level Grouping -->
+		<groups> 
+			<run>         
+                <include name="all"/> <!-- here group defined above the class definition -->    
+			</run>                    <!-- @Test(group={"all"}) execute all the test methods-->
+		</groups>                     <!-- including grouped and non-grouped test methods-->  
+		<classes>
+			<class name="testNG.GroupingTest1"/> 		  
+		</classes>
+	</test>
+</suite>
+	

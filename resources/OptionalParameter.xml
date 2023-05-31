@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OptionalParameterSuite">
+
+	<parameter name="url"
+		value="https://opensource-demo.orangehrmlive.com/" />
+	<parameter name="userName" value="Admin" />
+	<parameter name="password" value="admin123" />
+	<parameter name="threadSleepMiliseconds" value="2000" />
+
+	<test name="LoginVerification">
+		<parameter name="browserName" value="chrome" />
+		<classes>
+			<class name="testNG.OptionalParameters_RealTimeExample_6_2">
+				<methods>
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="verifyMyLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- LoginVerification -->
+
+	<test name="AccountVerification">
+		<classes>
+			<class name="testNG.OptionalParameters_RealTimeExample_6_2">
+				<methods>
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="nevigateToMyInfo" />
+					<include name="verifyMyInfo" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!-- LoginVerification -->
+
+</suite> <!-- OptionalParameterSuite -->

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroupSuite">
+
+	<test name="test1"> <!-- Test level Grouping -->
+		<groups>
+			<define name="DailyBuild"> <!-- here we are defining meta-data group(group of group) -->
+			
+				<include name="sanity" />
+				<include name="functional" />
+				
+			</define>
+			<define name="WeeklyBuild">
+			
+				<include name="smoke" />
+				<include name="sanity" />
+				<include name="functional" />
+				<include name="regression" />
+			
+			</define>
+			<run>
+				<include name="DailyBuild" /><!--if You run only <DailyBuild> then o/p=Test1,Test2,Test5,Test6 -->
+				<include name="WeeklyBuild" /><!-- if You run the only <WeeklyBuild>  then o/p= Test1,Test2,Test4,Test5,Test6 -->
+			</run>                            <!-- if You run the both <DailyBuild,WeeklyBuild>  then o/p= Test1,Test2,Test4,Test5,Test6 --> 
+		</groups>
+		<classes>
+			<class name="testNG.GroupingTest1" />
+			<class name="testNG.GroupingTest2" />
+		</classes>
+	</test> <!-- LoginVerification -->
+</suite>
+	

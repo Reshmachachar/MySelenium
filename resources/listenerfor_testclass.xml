@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+	<listeners> <!-- You can declare multiple Listeners -->
+		<listener class-name="testNG.ListenerDemo_15">
+		</listener>
+	</listeners>
+
+	<test name="Test1">
+		<classes>
+			<class name="testNG.ListenerFor_TestClass_15_2">
+				<methods>
+					<include name="testMethod1"/>
+					<include name="testMethod2"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Test2">
+		<classes>
+			<class name="testNG.ListenerFor_TestClass_15_2">
+				<methods>
+					<include name="testMethod3"/>
+					<include name="testMethod4"/>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
+ 
+<!-- op=>
+onStart
+onTestStart
+I am inside testmethod1
+onTestSuccess
+onTestStart
+I am inside testMethod2
+onTestFailure
+onFinish                  test case1 is complete here so this listener used here.
+
+onStart
+onTestStart
+I am inside testMethod3
+onTestFailedWithTimeout
+onTestStart
+onTestSkipped
+onFinish                 test case2 is complete here so this listener used here.
+
+-->

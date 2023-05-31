@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="classes" thread-count="2">
+<!-- 
+  1.Suite Level parallel execution is applicable for all the test cases.
+  **Execution Process of Parallel Execution. 
+  2.If it is  Suite Level parallel execution of classes then,
+     1.Mentioned thread(2) are created for first test case,
+     2.After execution of first test case then threads are destroyed and
+     3.New Mentioned threads(2) are created for next test case.
+       here in the test2 there are only one class,
+       one thread is used and another one will be idle.
+       
+     4.Conclusion:At Suite Level
+         1.if parallel="classes/methods" =>
+           1.No. of threads(mentioned 2) are created per test cases.
+           2.that means thread-count*no.of test cases.
+           
+         1.if parallel="tests" =>
+            1.Only 2 threads are created because thread-count is 2.
+            2.Means Only assigned thread-count is created.
+              
+           
+              
+       
+  3.If it is  Suite Level parallel execution of methods then,    
+
+ -->
+
+
+	<test name="Test1">
+		<classes>
+			<class name="testNG.ParalleExecution_TestsClassMethods_13_1" />
+			<class name="testNG.ParalleExecution_TestsClassMethods_13_2" />
+			<class name="testNG.ParalleExecution_TestsClassMethods_13_3" />
+		</classes>
+	</test>
+	<test name="Test2">
+		<classes>
+			<class name="testNG.ParalleExecution_TestsClassMethods_13_4" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->

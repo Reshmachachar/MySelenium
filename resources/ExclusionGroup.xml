@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroupSuite">
+
+	<test name="test1"> <!-- Test level Grouping -->
+		<groups> 
+			<run>
+                <include name="sanity"/>  <!-- called Test Group -->
+                <exclude name="regression"></exclude> <!-- Exclusion Group --> 
+			</run>
+		</groups>
+		<classes>
+			<class name="testNG.GroupingTest1"/> <!-- here test methods of both classes which are grouped into sanity group are called -->
+			<class name="testNG.GroupingTest2"/>  <!--  and between them which are grouped into regression are excluded and remaining are executed  -->
+		</classes>
+	</test> <!-- LoginVerification -->
+</suite>
+	

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GroupSuite">
+
+	<test name="test1"> <!-- Test level Grouping -->
+		<groups> 
+			<run>
+                
+                <include name="sanity"/>  <!-- called Test Group -->  
+			</run>
+		</groups>
+		<classes>
+			<class name="testNG.GroupingTest1"/> <!-- here test methods of both classes which are grouped into sanity group are executed  -->
+			<class name="testNG.GroupingTest2"/>  
+		</classes>
+	</test> <!-- LoginVerification -->
+</suite>
+	

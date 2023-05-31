@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"> <!-- All the Info available into .dtd file..followed format,tags ,default 
+	tags -->
+<suite name="DemoSuite">  <!-- suite name can be anything -->
+	<test name="OrangeHRMLogin"> <!-- Test no.=1 -->  <!-- Give the name to the Test; this is for the group of Test steps like, 
+			for Login part, you can give the name of login and following are the No of 
+			test-steps(methods of class) regarding it -->
+		<classes>
+			<class name="testNG.OrangeHRM">
+				<methods><!--<include> indicates, From the no of methods,which methods 
+						of the class are you want to include into the Test as Test steps -->
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="verifyMyLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="OrangeHRMMyInfoVerification"><!-- Test no.=2 -->
+		<classes>
+			<class name="testNG.OrangeHRM">
+				<methods>
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="nevigateToMyInfo" />
+					<include name="verifyMyInfo" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="VerifyGoogleSearch"> <!-- Test case 3 -->
+		<classes>
+			<class name="testNG.SecondTestCase">
+				<methods>
+					<include name="testGoogle" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+</suite> <!-- To Run xml file, TestNGSuite used..in the suite there is multiple Tests 
+	and into the test there is multiple Test steps -->
+	
+	
+<!-- 
+1.What is the TestNG xml file?
+Ans> 1.it is a configuration file which contains the test execution details.
+     2.Test details means 
+             1:test execution flow,
+             2:in which sequence you want to execute your test cases
+             3:what are the test cases you want to execute..   
+
+2.What is the need of TestNG xml file?
+Answer>Eg.,if there are some classes like A,B,C,D and 
+       their respective methods like A->a1,a2,a3,a4 
+                                     B->b1,b2
+                                     c->c1,c2,c3
+                                     d->d1,d2
+       And if you want to run the methods like a2,b1,c3,d2.
+       so this is time consuming task if you run it by manually.
+       so if you want to run these methods in single execution then you need of xml file
+       
+3.How to create TestNG xml file?       
+Answer>You can create it by manually.
+       Steps->1.Right click on Project
+              2.New->Other
+              3.search Xml
+              4.click on xml option->next
+              5.Give name to file and store it into resource folder of current project
+              
+ Answer>You can create it by.
+       Steps->1.Right click on Project
+              2.TestNG
+              3.Convert to TestNG
+              4.Create the xml file             
+
+4.How to add and execute TestNG xml file?                        
+ Answer>
+   1.To add Test,You can add into the suite and mention the class and its methods..
+   2.To execute, there is TestNGSuite, Run As TestNGSuite because All the tests come under testSuite       
+       
+                                       
+ -->	
+	

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AnnotationSuite">
+	<test name="verifyLogin">
+		<classes>
+			<class name="testNG.Annatation_RealTimeExample_5_3">
+				<methods>
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="verifyMyLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="CheckOrderHistory">
+		<classes>
+			<class name="testNG.Annatation_RealTimeExample_5_3">
+				<methods>
+					<include name="LaunchApp" />
+					<include name="Login" />
+					<include name="nevigateToOrderHistoryAndDetails" />
+					<include name="verifyOrderHistory" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite> 
